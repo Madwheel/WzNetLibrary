@@ -1,0 +1,3 @@
+include ':netlibrary'
+include ':app'
+rootProject.name = "WzNetLibrary"
