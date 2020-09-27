@@ -176,6 +176,9 @@ public class NetHttpServApi extends ServApi {
         }
         if (TextUtils.isEmpty(path)) {
             path = url.encodedPath();
+            if (!TextUtils.isEmpty(path) && path.startsWith("/")) {
+                path = path.substring(1, path.length()).toString();
+            }
         }
         HttpUrl.Builder urlBuild = new HttpUrl.Builder()
                 .scheme(url.scheme())
